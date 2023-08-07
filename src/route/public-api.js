@@ -5,7 +5,7 @@ import healthController from '../controller/health-controller.js'
 const publicRouter = new express.Router()
 
 publicRouter.get('/api/users', userController.register)
-publicRouter.get('', healthController.healthCheck)
+publicRouter.get('/', healthController.healthCheck)
 
 export {
     publicRouter
