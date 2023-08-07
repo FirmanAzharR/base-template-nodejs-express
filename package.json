@@ -4,6 +4,7 @@
   "description": "base template nodejs express",
   "main": "index.js",
   "scripts": {
+    "start": "node src/main.js",
     "test": "jest -i",
     "start-dev": "nodemon src/main.js"
   },

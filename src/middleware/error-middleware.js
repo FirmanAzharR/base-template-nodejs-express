@@ -1,6 +1,4 @@
 import { ResponseError } from "../error/response-error.js";
-import pkg from 'joi';
-const { ValidationError } = pkg;
 
 const errorMiddleware = async (err, req, res, next) => {
   if (!err) {
@@ -15,13 +13,6 @@ const errorMiddleware = async (err, req, res, next) => {
         errors: err.message,
       })
       .end();
-  } else if (err instanceof ValidationError) {
-    res,
-      send(400)
-        .json({
-          errors: err.message,
-        })
-        .end();
   } else {
     res
       .status(500)
